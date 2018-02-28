@@ -1,2 +1,3 @@
-qa/marm/test/FirstTest.class
-Elements/elementsScreens.class
+Elements\elementsScreens.class
+Elements\CheckingOS.class
+qa\marm\test\FirstTest.class

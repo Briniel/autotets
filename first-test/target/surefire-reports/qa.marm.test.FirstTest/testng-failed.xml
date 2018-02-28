@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [qa.marm.test.FirstTest]" verbose="0">
+  <test thread-count="5" name="Command line test(failed)" verbose="0">
+    <classes>
+      <class name="qa.marm.test.FirstTest">
+        <methods>
+          <include name="MenuLeft"/>
+          <include name="setup"/>
+          <include name="ScreenButtonCheck"/>
+        </methods>
+      </class> <!-- qa.marm.test.FirstTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [qa.marm.test.FirstTest] -->

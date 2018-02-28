@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
+import static Elements.CheckingOS.CheckingMyOS;
 import static Elements.elementsScreens.*;
 
 
@@ -16,26 +17,29 @@ public class FirstTest {
 
     @BeforeClass
     public static void setup() {
-        System.setProperty("webdriver.chrome.driver", "/home/user/po/chromedriver");
+        System.setProperty("webdriver.chrome.driver", CheckingMyOS());
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("http://dev.client-3.1.0-blackhole-v1d3.marm.altarix.org/Login");
-
     }
 
-    @Test
+    @Test(priority=1)
     public void Login(){
         LoginButton().click();
         elementWelcome().isDisplayed();
     }
 
-    @Test
+    @Test(priority=2)
     public void MenuLeft(){
         leftMenuButton().click();
         leftMenu().isDisplayed();
         VisualButton().click();
         MenuButton().click();
+    }
+
+    @Test(priority=3)
+    public void ScreenButtonCheck(){
         infoAccord().isDisplayed();
         mainButton().isDisplayed();
         Title1().isDisplayed();
@@ -49,7 +53,6 @@ public class FirstTest {
         themeStyle().isDisplayed();
         nameStyle().isDisplayed();
         inlineStyle().isDisplayed();
-
     }
 
 
