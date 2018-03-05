@@ -82,4 +82,5 @@ public class elementsScreens {
         return By.xpath("//span[contains(text(),'inlineStyle')]").findElement(driver);
     }
 
+
 }

@@ -36,6 +36,10 @@ public class FirstTest {
         leftMenu().isDisplayed();
         VisualButton().click();
         MenuButton().click();
+    }
+
+    @Test
+    public void ButtonCheck(){
         infoAccord().isDisplayed();
         mainButton().isDisplayed();
         Title1().isDisplayed();
@@ -49,8 +53,8 @@ public class FirstTest {
         themeStyle().isDisplayed();
         nameStyle().isDisplayed();
         inlineStyle().isDisplayed();
-
     }
+
 
 
     /*@AfterClass
