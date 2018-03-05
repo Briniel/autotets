@@ -71,15 +71,15 @@ public class elementsScreens {
     }
 
     public static WebElement themeStyle(){
-        return By.xpath("//span[contains(text(),'themeStyle')]").findElement(driver);
+        return By.xpath("//span[contains(text(),'themeStyle')]/../../..").findElement(driver);
     }
 
     public static WebElement nameStyle(){
-        return By.xpath("//span[contains(text(),'nameStyle')]").findElement(driver);
+        return By.xpath("//span[contains(text(),'nameStyle')]/../../..").findElement(driver);
     }
 
     public static WebElement inlineStyle(){
-        return By.xpath("//span[contains(text(),'inlineStyle')]").findElement(driver);
+        return driver.findElement(By.xpath("//span[contains(text(),'inlineStyle')]/../../.."));
     }
 
 

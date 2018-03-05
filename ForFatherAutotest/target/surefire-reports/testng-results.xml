@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2018-03-01T09:17:06Z" name="Command line suite" finished-at="2018-03-01T09:17:16Z" duration-ms="10159">
+    <groups>
+    </groups>
+    <test started-at="2018-03-01T09:17:06Z" name="Command line test" finished-at="2018-03-01T09:17:16Z" duration-ms="10159">
+      <class name="BasicCheck.YandexTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:BasicCheck.YandexTest@15eb5ee5]" started-at="2018-03-01T09:17:11Z" name="setup" finished-at="2018-03-01T09:17:15Z" duration-ms="4284" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Login()[pri:0, instance:BasicCheck.YandexTest@15eb5ee5]" started-at="2018-03-01T09:17:15Z" name="Login" finished-at="2018-03-01T09:17:16Z" duration-ms="1026" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+      </class> <!-- BasicCheck.YandexTest -->
+      <class name="BasicCheck.RadioTest">
+        <test-method is-config="true" signature="tolls()[pri:0, instance:BasicCheck.RadioTest@4f209819]" started-at="2018-03-01T09:17:06Z" name="tolls" finished-at="2018-03-01T09:17:11Z" duration-ms="4743" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tolls -->
+        <test-method signature="Tell()[pri:0, instance:BasicCheck.RadioTest@4f209819]" started-at="2018-03-01T09:17:11Z" name="Tell" finished-at="2018-03-01T09:17:11Z" duration-ms="93" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Tell -->
+      </class> <!-- BasicCheck.RadioTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
