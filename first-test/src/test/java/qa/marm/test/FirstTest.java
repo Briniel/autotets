@@ -8,7 +8,8 @@ import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 
-import static Elements.CheckingOS.CheckingMyOS;
+import static Elements.CheckingOS.GiveDriver;
+import static Elements.ScreenShot.screen;
 import static Elements.elementsScreens.*;
 
 
@@ -16,9 +17,10 @@ public class FirstTest {
 
     public static WebDriver driver;
 
+
     @BeforeClass
     public static void setup() {
-        System.setProperty("webdriver.chrome.driver", CheckingMyOS());
+        System.setProperty("webdriver.chrome.driver", GiveDriver());
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -27,24 +29,28 @@ public class FirstTest {
 
     /*Авторизация*/
     @Test(priority=1)
-    public void Login(){
+    public void Login() throws Exception {
+        screen("AuthorizationScreen");
         LoginButton().click();
         elementWelcome().isDisplayed();
     }
 
     /*Открытие бокового меню и переход в раздел Button*/
     @Test(priority=2)
-    public void MenuLeft(){
+    public void MenuLeft() throws Exception {
+        screen("MainScreen");
         leftMenuButton().click();
         leftMenu().isDisplayed();
         VisualButton().click();
+        screen("leftMenuButtonScreen");
         MenuButton().click();
     }
 
     /*Проверка наличия всех элементов на экране*/
     @Test(priority=3)
-    public void ScreenButtonCheck(){
+    public void ScreenButtonCheck() throws Exception {
         //"Экран Button"
+        screen("MainButtonScreenBefore");
         infoAccord().isDisplayed();
         mainButton().isDisplayed();
         Title1().isDisplayed();
@@ -58,12 +64,13 @@ public class FirstTest {
         themeStyle().isDisplayed();
         nameStyle().isDisplayed();
         inlineStyle().isDisplayed();
+        screen("MainButtonScreenBeforeAfter");
     }
 
     /*Проверка функционала*/
     @Test(priority = 4)
-    public void CheckMainButton(){
-        //Смена текста визуального компонента
+    public void CheckMainButton() throws Exception {
+       /* //Смена текста визуального компонента
         Title2().click();
         if (mainButton().getText().equals("TITLEWORK")){
             Assert.assertTrue(true);
@@ -71,12 +78,15 @@ public class FirstTest {
             Assert.assertFalse(true);
         }
 
+        screen("FirstCheack");
+
         //Возврат текста визуального компонента
         Title1().click();
         if (mainButton().getText().equals("BUTTON")){
             Assert.assertTrue(true);
         }else {
             Assert.assertFalse(true);
+
         }
 
         //Скрытие визуального компонента
@@ -141,6 +151,17 @@ public class FirstTest {
                 inlineStyle().findElement(By.xpath("//span[contains(text(),'inlineStyle')]")).getAttribute("style").contains("color: rgb(204, 0, 0)")){
             Assert.assertTrue(true);
         } else {
+            Assert.assertFalse(true);
+        }*/
+
+        //Проверка всплывающего сообщения "onClick() Сработал!"
+        mainButton().click();
+        Thread.sleep(1000);
+        if (onClick().getText().equals("onClick() Сработал!")){
+            System.out.println("Нашел: "+onClick().getText());
+            Assert.assertTrue(true);
+        } else {
+            System.out.println("Пиздец: "+onClick().getText());
             Assert.assertFalse(true);
         }
     }

@@ -82,5 +82,9 @@ public class elementsScreens {
         return driver.findElement(By.xpath("//span[contains(text(),'inlineStyle')]/../../.."));
     }
 
+    public static WebElement onClick(){
+        return driver.findElement(By.xpath("//div[contains(text(),'onClick() Сработал!')]"));
+    }
+
 
 }

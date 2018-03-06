@@ -1,3 +1,4 @@
 qa/marm/test/FirstTest.class
-Elements/CheckingOS.class
+Elements/ScreenShot.class
 Elements/elementsScreens.class
+Elements/CheckingOS.class

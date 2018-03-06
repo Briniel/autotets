@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="qa.marm.test.FirstTest" duration-ms="51366" started-at="2018-03-05T14:02:07Z" finished-at="2018-03-05T14:02:58Z">
+  <suite name="qa.marm.test.FirstTest" duration-ms="32665" started-at="2018-03-06T14:13:23Z" finished-at="2018-03-06T14:13:55Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="51366" started-at="2018-03-05T14:02:07Z" finished-at="2018-03-05T14:02:58Z">
+    <test name="Command line test" duration-ms="32665" started-at="2018-03-06T14:13:23Z" finished-at="2018-03-06T14:13:55Z">
       <class name="qa.marm.test.FirstTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:qa.marm.test.FirstTest@2d554825]" name="setup" is-config="true" duration-ms="4015" started-at="2018-03-05T14:02:07Z" finished-at="2018-03-05T14:02:11Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:qa.marm.test.FirstTest@4cb2c100]" name="setup" is-config="true" duration-ms="12530" started-at="2018-03-06T14:13:23Z" finished-at="2018-03-06T14:13:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:qa.marm.test.FirstTest@2d554825]" name="Login" duration-ms="15301" started-at="2018-03-05T14:02:11Z" finished-at="2018-03-05T14:02:26Z">
+        <test-method status="PASS" signature="Login()[pri:1, instance:qa.marm.test.FirstTest@4cb2c100]" name="Login" duration-ms="17426" started-at="2018-03-06T14:13:35Z" finished-at="2018-03-06T14:13:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="MenuLeft()[pri:2, instance:qa.marm.test.FirstTest@2d554825]" name="MenuLeft" duration-ms="423" started-at="2018-03-05T14:02:26Z" finished-at="2018-03-05T14:02:27Z">
+        <test-method status="PASS" signature="MenuLeft()[pri:2, instance:qa.marm.test.FirstTest@4cb2c100]" name="MenuLeft" duration-ms="698" started-at="2018-03-06T14:13:53Z" finished-at="2018-03-06T14:13:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MenuLeft -->
-        <test-method status="PASS" signature="ScreenButtonCheck()[pri:3, instance:qa.marm.test.FirstTest@2d554825]" name="ScreenButtonCheck" duration-ms="652" started-at="2018-03-05T14:02:27Z" finished-at="2018-03-05T14:02:27Z">
+        <test-method status="PASS" signature="ScreenButtonCheck()[pri:3, instance:qa.marm.test.FirstTest@4cb2c100]" name="ScreenButtonCheck" duration-ms="864" started-at="2018-03-06T14:13:53Z" finished-at="2018-03-06T14:13:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ScreenButtonCheck -->
-        <test-method status="PASS" signature="CheckMainButton()[pri:4, instance:qa.marm.test.FirstTest@2d554825]" name="CheckMainButton" duration-ms="30959" started-at="2018-03-05T14:02:27Z" finished-at="2018-03-05T14:02:58Z">
+        <test-method status="PASS" signature="CheckMainButton()[pri:4, instance:qa.marm.test.FirstTest@4cb2c100]" name="CheckMainButton" duration-ms="1133" started-at="2018-03-06T14:13:54Z" finished-at="2018-03-06T14:13:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckMainButton -->
