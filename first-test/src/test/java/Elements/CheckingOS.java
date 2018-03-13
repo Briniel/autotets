@@ -9,10 +9,10 @@ public class CheckingOS {
         String CheckOS = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
         String OS = null;
         if(CheckOS.indexOf("win") >= 0){
-            OS = "src\\test\\resourse\\";
+            OS = "src\\test\\resources\\";
         } else if (CheckOS.contains("nix") || CheckOS.contains("nux")
                 || CheckOS.contains("aix")){
-            OS = "src/test/resourse/";
+            OS = "src/test/resources/";
         }
         return OS;
     }

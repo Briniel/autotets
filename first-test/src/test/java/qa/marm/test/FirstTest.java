@@ -1,13 +1,15 @@
 package qa.marm.test;
 
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.Assert;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import static Elements.CarryFile.Carry;
 import static Elements.CheckingOS.GiveDriver;
 import static Elements.ScreenShot.screen;
 import static Elements.elementsScreens.*;
@@ -18,7 +20,7 @@ public class FirstTest {
     public static WebDriver driver;
 
 
-    @BeforeClass
+    @BeforeSuite
     public static void setup() {
         System.setProperty("webdriver.chrome.driver", GiveDriver());
         driver = new ChromeDriver();
@@ -28,26 +30,26 @@ public class FirstTest {
     }
 
     /*Авторизация*/
-    @Test(priority=1)
+    @Test(priority = 1)
     public void Login() throws Exception {
-        screen("AuthorizationScreen");
-        LoginButton().click();
-        elementWelcome().isDisplayed();
+            screen("AuthorizationScreen");
+            LoginButton().click();
+            elementWelcome().isDisplayed();
     }
 
     /*Открытие бокового меню и переход в раздел Button*/
-    @Test(priority=2)
+    @Test(priority = 2)
     public void MenuLeft() throws Exception {
-        screen("MainScreen");
-        leftMenuButton().click();
-        leftMenu().isDisplayed();
-        VisualButton().click();
-        screen("leftMenuButtonScreen");
-        MenuButton().click();
+            screen("MainScreen");
+            leftMenuButton().click();
+            leftMenu().isDisplayed();
+            VisualButton().click();
+            screen("leftMenuButtonScreen");
+            MenuButton().click();
     }
 
     /*Проверка наличия всех элементов на экране*/
-    @Test(priority=3)
+    @Test(priority = 3)
     public void ScreenButtonCheck() throws Exception {
         //"Экран Button"
         screen("MainButtonScreenBefore");
@@ -67,66 +69,52 @@ public class FirstTest {
         screen("MainButtonScreenBeforeAfter");
     }
 
-    /*Проверка функционала*/
-    @Test(priority = 4)
-    public void CheckMainButton() throws Exception {
-       /* //Смена текста визуального компонента
+    //Проверка визуальной части элемента
+    @Test (priority = 4)
+    public void CorrectDisplayOfAVisualElement() {
+            Assert.assertTrue(mainButton().getAttribute("style").contains("background-color: rgb(218, 232, 252)"), "Проверка цвета фона кнопки");
+            Assert.assertTrue(mainButton().getAttribute("style").contains("border: 1px solid rgb(108, 142, 191)"), "Проверка цвета рамки кнопки");
+            Assert.assertTrue(mainButton().getAttribute("style").contains("border-radius: 5px"), "Проверка скругления кнопки");
+    }
+
+    //Проверка визуального отображения текста кнопки
+    @Test (priority = 5)
+    public void ChangeTheTextOfTheVisualElement() {
         Title2().click();
-        if (mainButton().getText().equals("TITLEWORK")){
-            Assert.assertTrue(true);
-        }else {
-            Assert.assertFalse(true);
-        }
-
-        screen("FirstCheack");
-
-        //Возврат текста визуального компонента
+        Assert.assertTrue(mainButton().getText().equals("TITLEWORK"), "Проверка смены названия кнопки на TITLEWORK");
         Title1().click();
-        if (mainButton().getText().equals("BUTTON")){
-            Assert.assertTrue(true);
-        }else {
-            Assert.assertFalse(true);
+        Assert.assertTrue(mainButton().getText().equals("BUTTON"), "Проверка смены названия кнопки на BUTTON");
+    }
 
-        }
-
-        //Скрытие визуального компонента
+    //Проверка скрытия кнопки
+    @Test (priority = 6)
+    public void ChangeTheVisibilityOfTheVisualElement() {
         VisibilityFalse().click();
         try {
             if (mainButton().isDisplayed()){
-                Assert.assertFalse(true);
+                Assert.assertFalse(true, "Конопка не скрыта");
             }
         } catch (NoSuchElementException e) {
             Assert.assertTrue(true);
         }
-
-        //Отображение компонента
         VisibilityTrue().click();
         mainButton().isDisplayed();
+    }
 
-        //Выравнивание по левому краю
+    //Проврека выравнивания текста
+    @Test (priority = 7)
+    public void AligningTheTextOfTheVisualElement() {
         AlignLeft().click();
-        if (mainButton().getAttribute("style").contains("left")){
-            Assert.assertTrue(true);
-        } else {
-            Assert.assertFalse(true);
-        }
-
-        //Выравнивание по центру
+        Assert.assertTrue(mainButton().getAttribute("style").contains("left"), "Проверка выравнивания текста по левому краю");
         AlignCenter().click();
-        if (mainButton().getAttribute("style").contains("center")){
-            Assert.assertTrue(true);
-        } else {
-            Assert.assertFalse(true);
-        }
-
-        //Выравнивание по правому краю
+        Assert.assertTrue(mainButton().getAttribute("style").contains("center"), "Проверка выравнивания текста по центру");
         AlignRight().click();
-        if (mainButton().getAttribute("style").contains("right")){
-            Assert.assertTrue(true);
-        } else {
-            Assert.assertFalse(true);
-        }
+        Assert.assertTrue(mainButton().getAttribute("style").contains("right"), "Проверка выравнивания текста по правому краю");
+    }
 
+    /*Проверка функционала*/
+    @Test(enabled = false)
+    public void CheckMainButton() throws Exception {
         //Проверка стилей
         if (themeStyle().getAttribute("style").contains("text-align: center")&
                 themeStyle().getAttribute("style").contains("border-radius: 5px")){
@@ -152,27 +140,23 @@ public class FirstTest {
             Assert.assertTrue(true);
         } else {
             Assert.assertFalse(true);
-        }*/
+        }
 
         //Проверка всплывающего сообщения "onClick() Сработал!"
         mainButton().click();
         Thread.sleep(1000);
         if (onClick().getText().equals("onClick() Сработал!")){
-            System.out.println("Нашел: "+onClick().getText());
             Assert.assertTrue(true);
         } else {
-            System.out.println("Пиздец: "+onClick().getText());
             Assert.assertFalse(true);
         }
+
+
     }
 
-
-    /*@AfterClass
-    public static void tearDown() {
-        WebElement menuUser = driver.findElement(By.cssSelector(".login-button__menu-icon"));
-        menuUser.click();
-        WebElement logoutButton = driver.findElement(By.id("login__logout"));
-        logoutButton.click();
+    @AfterSuite
+    public static void tearDown() throws IOException {
+        Carry();
         driver.quit();
-    }*/
+    }
 }

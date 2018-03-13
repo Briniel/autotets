@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="1" total="8" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="qa.marm.test.FirstTest" duration-ms="32665" started-at="2018-03-06T14:13:23Z" finished-at="2018-03-06T14:13:55Z">
+  <suite name="Poligon" duration-ms="50696" started-at="2018-03-13T12:15:31Z" finished-at="2018-03-13T12:16:22Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="32665" started-at="2018-03-06T14:13:23Z" finished-at="2018-03-06T14:13:55Z">
+    <test name="Button" duration-ms="50696" started-at="2018-03-13T12:15:31Z" finished-at="2018-03-13T12:16:22Z">
       <class name="qa.marm.test.FirstTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:qa.marm.test.FirstTest@4cb2c100]" name="setup" is-config="true" duration-ms="12530" started-at="2018-03-06T14:13:23Z" finished-at="2018-03-06T14:13:35Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:qa.marm.test.FirstTest@36f0f1be]" name="setup" is-config="true" duration-ms="4260" started-at="2018-03-13T12:15:27Z" finished-at="2018-03-13T12:15:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:qa.marm.test.FirstTest@4cb2c100]" name="Login" duration-ms="17426" started-at="2018-03-06T14:13:35Z" finished-at="2018-03-06T14:13:53Z">
+        <test-method status="PASS" signature="Login()[pri:1, instance:qa.marm.test.FirstTest@36f0f1be]" name="Login" duration-ms="17805" started-at="2018-03-13T12:15:31Z" finished-at="2018-03-13T12:15:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="MenuLeft()[pri:2, instance:qa.marm.test.FirstTest@4cb2c100]" name="MenuLeft" duration-ms="698" started-at="2018-03-06T14:13:53Z" finished-at="2018-03-06T14:13:53Z">
+        <test-method status="PASS" signature="MenuLeft()[pri:2, instance:qa.marm.test.FirstTest@36f0f1be]" name="MenuLeft" duration-ms="846" started-at="2018-03-13T12:15:49Z" finished-at="2018-03-13T12:15:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MenuLeft -->
-        <test-method status="PASS" signature="ScreenButtonCheck()[pri:3, instance:qa.marm.test.FirstTest@4cb2c100]" name="ScreenButtonCheck" duration-ms="864" started-at="2018-03-06T14:13:53Z" finished-at="2018-03-06T14:13:54Z">
+        <test-method status="PASS" signature="ScreenButtonCheck()[pri:3, instance:qa.marm.test.FirstTest@36f0f1be]" name="ScreenButtonCheck" duration-ms="964" started-at="2018-03-13T12:15:50Z" finished-at="2018-03-13T12:15:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ScreenButtonCheck -->
-        <test-method status="PASS" signature="CheckMainButton()[pri:4, instance:qa.marm.test.FirstTest@4cb2c100]" name="CheckMainButton" duration-ms="1133" started-at="2018-03-06T14:13:54Z" finished-at="2018-03-06T14:13:55Z">
+        <test-method status="PASS" signature="CorrectDisplayOfAVisualElement()[pri:4, instance:qa.marm.test.FirstTest@36f0f1be]" name="CorrectDisplayOfAVisualElement" duration-ms="45" started-at="2018-03-13T12:15:51Z" finished-at="2018-03-13T12:15:51Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CheckMainButton -->
+        </test-method> <!-- CorrectDisplayOfAVisualElement -->
+        <test-method status="PASS" signature="ChangeTheTextOfTheVisualElement()[pri:5, instance:qa.marm.test.FirstTest@36f0f1be]" name="ChangeTheTextOfTheVisualElement" duration-ms="239" started-at="2018-03-13T12:15:51Z" finished-at="2018-03-13T12:15:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangeTheTextOfTheVisualElement -->
+        <test-method status="PASS" signature="ChangeTheVisibilityOfTheVisualElement()[pri:6, instance:qa.marm.test.FirstTest@36f0f1be]" name="ChangeTheVisibilityOfTheVisualElement" duration-ms="30241" started-at="2018-03-13T12:15:51Z" finished-at="2018-03-13T12:16:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangeTheVisibilityOfTheVisualElement -->
+        <test-method status="PASS" signature="AligningTheTextOfTheVisualElement()[pri:7, instance:qa.marm.test.FirstTest@36f0f1be]" name="AligningTheTextOfTheVisualElement" duration-ms="345" started-at="2018-03-13T12:16:21Z" finished-at="2018-03-13T12:16:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AligningTheTextOfTheVisualElement -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:qa.marm.test.FirstTest@36f0f1be]" name="tearDown" is-config="true" duration-ms="69" started-at="2018-03-13T12:16:22Z" finished-at="2018-03-13T12:16:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- qa.marm.test.FirstTest -->
-    </test> <!-- Command line test -->
-  </suite> <!-- qa.marm.test.FirstTest -->
+    </test> <!-- Button -->
+  </suite> <!-- Poligon -->
 </testng-results>
