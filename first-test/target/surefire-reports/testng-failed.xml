@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Poligon]">
+  <test name="Authorization(failed)">
+    <classes>
+      <class name="qa.marm.test.Authorization">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="Login"/>
+        </methods>
+      </class> <!-- qa.marm.test.Authorization -->
+    </classes>
+  </test> <!-- Authorization(failed) -->
+  <test name="Button(failed)">
+    <classes>
+      <class name="qa.marm.test.Authorization">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- qa.marm.test.Authorization -->
+      <class name="qa.marm.test.ButtonTest">
+        <methods>
+          <include name="ScreenButtonCheck"/>
+          <include name="CorrectDisplayOfAVisualElement"/>
+          <include name="MenuLeft"/>
+        </methods>
+      </class> <!-- qa.marm.test.ButtonTest -->
+    </classes>
+  </test> <!-- Button(failed) -->
+</suite> <!-- Failed suite [Poligon] -->

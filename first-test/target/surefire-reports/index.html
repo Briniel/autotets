@@ -5,7 +5,7 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Poligon">
-              <span class="suite-name border-passed">Poligon</span>
+              <span class="suite-name border-failed">Poligon</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,46 +91,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">4 methods, 4 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Poligon" class="hide-methods passed suite-Poligon"> (hide)</a> <!-- hide-methods passed suite-Poligon -->
-                      <a href="#" panel-name="suite-Poligon" class="show-methods passed suite-Poligon"> (show)</a> <!-- show-methods passed suite-Poligon -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Poligon" class="hide-methods failed suite-Poligon"> (hide)</a> <!-- hide-methods failed suite-Poligon -->
+                      <a href="#" panel-name="suite-Poligon" class="show-methods failed suite-Poligon"> (show)</a> <!-- show-methods failed suite-Poligon -->
                     </span>
-                    <div class="method-list-content passed suite-Poligon">
+                    <div class="method-list-content failed suite-Poligon">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Poligon" title="qa.marm.test.ButtonTest" hash-for-method="AligningTheTextOfTheVisualElement">AligningTheTextOfTheVisualElement</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Poligon" title="qa.marm.test.ButtonTest" hash-for-method="ChangeTheTextOfTheVisualElement">ChangeTheTextOfTheVisualElement</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Poligon" title="qa.marm.test.ButtonTest" hash-for-method="CorrectDisplayOfAVisualElement">CorrectDisplayOfAVisualElement</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Poligon" title="qa.marm.test.Authorization" hash-for-method="Login">Login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Poligon" title="qa.marm.test.ButtonTest" hash-for-method="MenuLeft">MenuLeft</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Poligon" title="qa.marm.test.ButtonTest" hash-for-method="ScreenButtonCheck">ScreenButtonCheck</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Poligon -->
+                    </div> <!-- method-list-content failed suite-Poligon -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -142,9 +132,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Poligon" class="panel Poligon">
-          <div class="suite-Poligon-class-passed">
+          <div class="suite-Poligon-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">qa.marm.test.Authorization</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -153,35 +143,52 @@
                   <a name="Login">
                   </a> <!-- Login -->
                   <span class="method-name">Login</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at qa.marm.test.Authorization.Login(Authorization.java:38)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Poligon-class-passed -->
-          <div class="suite-Poligon-class-passed">
+          </div> <!-- suite-Poligon-class-failed -->
+          <div class="suite-Poligon-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">qa.marm.test.ButtonTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="AligningTheTextOfTheVisualElement">
-                  </a> <!-- AligningTheTextOfTheVisualElement -->
-                  <span class="method-name">AligningTheTextOfTheVisualElement</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="ChangeTheTextOfTheVisualElement">
-                  </a> <!-- ChangeTheTextOfTheVisualElement -->
-                  <span class="method-name">ChangeTheTextOfTheVisualElement</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="CorrectDisplayOfAVisualElement">
                   </a> <!-- CorrectDisplayOfAVisualElement -->
                   <span class="method-name">CorrectDisplayOfAVisualElement</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.146)
+  (Driver info: chromedriver=2.35.528139 (47ead77cb35ad2a9a83248b292151462a66cd881),platform=Linux 4.10.0-42-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.9.1&apos;, revision: &apos;63f7b50&apos;, time: &apos;2018-02-07T22:25:02.294Z&apos;
+System info: host: &apos;user-System-Product-Name&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.10.0-42-generic&apos;, java.version: &apos;1.8.0_151&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528139 (47ead77cb35ad2..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 65.0.3325.146, webStorageEnabled: true}
+Session ID: 207f28b49ec4efcde9e2292d897c1864
+*** Element info: {Using=id, value=mainButton}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:417)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at Elements.elementsScreens.mainButton(elementsScreens.java:38)
+	at qa.marm.test.ButtonTest.CorrectDisplayOfAVisualElement(ButtonTest.java:58)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -189,6 +196,33 @@
                   <a name="MenuLeft">
                   </a> <!-- MenuLeft -->
                   <span class="method-name">MenuLeft</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.146)
+  (Driver info: chromedriver=2.35.528139 (47ead77cb35ad2a9a83248b292151462a66cd881),platform=Linux 4.10.0-42-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.9.1&apos;, revision: &apos;63f7b50&apos;, time: &apos;2018-02-07T22:25:02.294Z&apos;
+System info: host: &apos;user-System-Product-Name&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.10.0-42-generic&apos;, java.version: &apos;1.8.0_151&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528139 (47ead77cb35ad2..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 65.0.3325.146, webStorageEnabled: true}
+Session ID: 207f28b49ec4efcde9e2292d897c1864
+*** Element info: {Using=xpath, value=//*[@id=&quot;toolbar_marm&quot;]/div[1]/button}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at Elements.elementsScreens.leftMenuButton(elementsScreens.java:18)
+	at qa.marm.test.ButtonTest.MenuLeft(ButtonTest.java:23)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -196,10 +230,37 @@
                   <a name="ScreenButtonCheck">
                   </a> <!-- ScreenButtonCheck -->
                   <span class="method-name">ScreenButtonCheck</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=65.0.3325.146)
+  (Driver info: chromedriver=2.35.528139 (47ead77cb35ad2a9a83248b292151462a66cd881),platform=Linux 4.10.0-42-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.9.1&apos;, revision: &apos;63f7b50&apos;, time: &apos;2018-02-07T22:25:02.294Z&apos;
+System info: host: &apos;user-System-Product-Name&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.10.0-42-generic&apos;, java.version: &apos;1.8.0_151&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528139 (47ead77cb35ad2..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 65.0.3325.146, webStorageEnabled: true}
+Session ID: 207f28b49ec4efcde9e2292d897c1864
+*** Element info: {Using=id, value=accordInfo}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:417)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at Elements.elementsScreens.infoAccord(elementsScreens.java:34)
+	at qa.marm.test.ButtonTest.ScreenButtonCheck(ButtonTest.java:36)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Poligon-class-passed -->
+          </div> <!-- suite-Poligon-class-failed -->
         </div> <!-- panel Poligon -->
         <div panel-name="test-xml-Poligon" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -210,12 +271,12 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Poligon&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Authorization&quot;&gt;
+  &lt;test name=&quot;Authorization&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;qa.marm.test.Authorization&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Authorization --&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Button&quot;&gt;
+  &lt;test name=&quot;Button&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;qa.marm.test.ButtonTest&quot;/&gt;
     &lt;/classes&gt;
@@ -260,36 +321,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Login')
 data.setCell(0, 2, 'qa.marm.test.Authorization')
-data.setCell(0, 3, 16143);
+data.setCell(0, 3, 14014);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'ScreenButtonCheck')
+data.setCell(1, 1, 'MenuLeft')
 data.setCell(1, 2, 'qa.marm.test.ButtonTest')
-data.setCell(1, 3, 884);
+data.setCell(1, 3, 18);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'AligningTheTextOfTheVisualElement')
+data.setCell(2, 1, 'ScreenButtonCheck')
 data.setCell(2, 2, 'qa.marm.test.ButtonTest')
-data.setCell(2, 3, 363);
+data.setCell(2, 3, 12);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'MenuLeft')
+data.setCell(3, 1, 'CorrectDisplayOfAVisualElement')
 data.setCell(3, 2, 'qa.marm.test.ButtonTest')
-data.setCell(3, 3, 349);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'CorrectDisplayOfAVisualElement')
-data.setCell(4, 2, 'qa.marm.test.ButtonTest')
-data.setCell(4, 3, 337);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'ChangeTheTextOfTheVisualElement')
-data.setCell(5, 2, 'qa.marm.test.ButtonTest')
-data.setCell(5, 3, 210);
+data.setCell(3, 3, 7);
 window.suiteTableData['Poligon']= { tableData: data, tableDiv: 'times-div-Poligon'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 18 seconds</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-Poligon">
               </div> <!-- times-div-Poligon -->
             </div> <!-- times-div -->
@@ -304,13 +357,17 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Poligon" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">qa.marm.test.ButtonTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">ChangeTheTextOfTheVisualElement</span>
+                <br/>
                 <span class="ignored-method-name">ChangeTheVisibilityOfTheVisualElement</span>
+                <br/>
+                <span class="ignored-method-name">AligningTheTextOfTheVisualElement</span>
                 <br/>
                 <span class="ignored-method-name">CheckMainButton</span>
                 <br/>
@@ -330,38 +387,38 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">Login</span>
-                <span class="method-start">4961 ms</span>
+                <span class="method-start">2500 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">qa.marm.test.ButtonTest</div> <!-- chronological-class-name -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">MenuLeft</span>
-                <span class="method-start">21362 ms</span>
+                <span class="method-start">16695 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">ScreenButtonCheck</span>
-                <span class="method-start">21712 ms</span>
+                <span class="method-start">16719 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">CorrectDisplayOfAVisualElement</span>
-                <span class="method-start">22597 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">ChangeTheTextOfTheVisualElement</span>
-                <span class="method-start">22936 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">AligningTheTextOfTheVisualElement</span>
-                <span class="method-start">23147 ms</span>
+                <span class="method-start">16735 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">qa.marm.test.Authorization</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">23513 ms</span>
+                <span class="method-start">16762 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

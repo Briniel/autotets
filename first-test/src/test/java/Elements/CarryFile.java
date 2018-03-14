@@ -11,20 +11,27 @@ public class CarryFile {
 
     public static void Carry() throws IOException {
         String MyOS = CheckingMyOS();
-        String sourseWay;
-        String destWay;
+
+        String sourse;
+        String dest;
+
+
 
         if (MyOS.contains("\\")){
-            sourseWay = MyOS + "environment.properties";
-            destWay = "target\\allure-results\\environment.properties";
+            sourse = MyOS;
+            dest = "target\\allure-results\\";
         } else {
-            sourseWay = MyOS + "environment.properties";
-            destWay = "target/allure-results/environment.properties";
+            sourse = MyOS;
+            dest = "target/allure-results/";
         }
 
-        File sourse = new File(sourseWay);
-        File dest = new File(destWay);
-        FileUtils.copyFile(sourse, dest);
+        File sourseEnvironment = new File(sourse + "environment.properties");
+        File destEnvironment = new File(dest + "environment.properties");
+        FileUtils.copyFile(sourseEnvironment, destEnvironment);
+
+        File sourseCategories = new File(sourse + "categories.json");
+        File destCategories = new File(dest+ "categories.json");
+        FileUtils.copyFile(sourseCategories, destCategories);
     }
 
 }

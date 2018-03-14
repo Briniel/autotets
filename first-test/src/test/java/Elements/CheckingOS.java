@@ -5,10 +5,10 @@ import java.util.*;
 
 public class CheckingOS {
 
-    public static String CheckingMyOS(){
+    static String CheckingMyOS(){
         String CheckOS = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
         String OS = null;
-        if(CheckOS.indexOf("win") >= 0){
+        if(CheckOS.contains("win")){
             OS = "src\\test\\resources\\";
         } else if (CheckOS.contains("nix") || CheckOS.contains("nux")
                 || CheckOS.contains("aix")){
