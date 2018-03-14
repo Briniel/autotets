@@ -1,32 +1,38 @@
 package Elements;
 
+import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import static Elements.CheckingOS.CheckingMyOS;
-import static qa.marm.test.FirstTest.driver;
+import static qa.marm.test.Authorization.driver;
 
 public class ScreenShot {
-    public static void screen(String method) throws Exception {
+    public static void screen() throws Exception {
         //Вычисление текущего опер. дня.
         String MyOS = CheckingMyOS();
-        Date dateNow = new Date();
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd");
+//        Date dateNow = new Date();
+//        SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd");
 
         //Определение ОС и создание папки для скринов.
         if (MyOS.contains("\\")){
-            MyOS = MyOS + formatForDateNow.format(dateNow)+"\\";
+            MyOS = "target\\allure-results\\";
         } else {
-            MyOS = MyOS + formatForDateNow.format(dateNow)+"/";
+            MyOS = "target/allure-results/";
         }
 
+
         //Скриншот экрана
-        File screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(screen, new File(MyOS + method + ".png"));
+        byte[] screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        saveScreenshot(screen);
     }
+
+    @Attachment(value = "{method}")
+    public static byte[] saveScreenshot(byte[] screenShot) {
+        return screenShot;
+    }
+
 }

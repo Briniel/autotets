@@ -3,7 +3,7 @@ package Elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static qa.marm.test.FirstTest.driver;
+import static qa.marm.test.Authorization.driver;
 
 public class elementsScreens {
     public static WebElement LoginButton() {

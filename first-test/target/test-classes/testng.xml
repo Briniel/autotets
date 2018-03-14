@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Poligon">
+    <test name="Authorization">
+        <classes>
+            <class name="qa.marm.test.Authorization"/>
+        </classes>
+    </test>
     <test name="Button">
         <classes>
-            <class name="qa.marm.test.FirstTest"/>
+            <class name="qa.marm.test.ButtonTest"/>
         </classes>
     </test>
 </suite>

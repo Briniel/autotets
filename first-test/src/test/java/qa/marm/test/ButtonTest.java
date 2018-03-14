@@ -2,57 +2,27 @@ package qa.marm.test;
 
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import org.testng.Assert;
 
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
-import static Elements.CarryFile.Carry;
-import static Elements.CheckingOS.GiveDriver;
-import static Elements.ScreenShot.screen;
 import static Elements.elementsScreens.*;
 
-
-public class FirstTest {
-
-    public static WebDriver driver;
-
-
-    @BeforeSuite
-    public static void setup() {
-        System.setProperty("webdriver.chrome.driver", GiveDriver());
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get("http://dev.client-3.1.0-blackhole-v1d3.marm.altarix.org/Login");
-    }
-
-    /*Авторизация*/
-    @Test(priority = 1)
-    public void Login() throws Exception {
-            screen("AuthorizationScreen");
-            LoginButton().click();
-            elementWelcome().isDisplayed();
-    }
+@Test(dataProviderClass = Authorization.class)
+public class ButtonTest {
 
     /*Открытие бокового меню и переход в раздел Button*/
-    @Test(priority = 2)
+    @Test(priority = 1)
     public void MenuLeft() throws Exception {
-            screen("MainScreen");
             leftMenuButton().click();
             leftMenu().isDisplayed();
             VisualButton().click();
-            screen("leftMenuButtonScreen");
             MenuButton().click();
     }
 
     /*Проверка наличия всех элементов на экране*/
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void ScreenButtonCheck() throws Exception {
         //"Экран Button"
-        screen("MainButtonScreenBefore");
         infoAccord().isDisplayed();
         mainButton().isDisplayed();
         Title1().isDisplayed();
@@ -66,19 +36,19 @@ public class FirstTest {
         themeStyle().isDisplayed();
         nameStyle().isDisplayed();
         inlineStyle().isDisplayed();
-        screen("MainButtonScreenBeforeAfter");
     }
 
+
     //Проверка визуальной части элемента
-    @Test (priority = 4)
-    public void CorrectDisplayOfAVisualElement() {
+    @Test (priority = 3)
+    public void CorrectDisplayOfAVisualElement() throws Exception {
             Assert.assertTrue(mainButton().getAttribute("style").contains("background-color: rgb(218, 232, 252)"), "Проверка цвета фона кнопки");
             Assert.assertTrue(mainButton().getAttribute("style").contains("border: 1px solid rgb(108, 142, 191)"), "Проверка цвета рамки кнопки");
             Assert.assertTrue(mainButton().getAttribute("style").contains("border-radius: 5px"), "Проверка скругления кнопки");
     }
 
     //Проверка визуального отображения текста кнопки
-    @Test (priority = 5)
+    @Test (priority = 4)
     public void ChangeTheTextOfTheVisualElement() {
         Title2().click();
         Assert.assertTrue(mainButton().getText().equals("TITLEWORK"), "Проверка смены названия кнопки на TITLEWORK");
@@ -87,7 +57,7 @@ public class FirstTest {
     }
 
     //Проверка скрытия кнопки
-    @Test (priority = 6)
+    @Test (priority = 5, enabled = false)
     public void ChangeTheVisibilityOfTheVisualElement() {
         VisibilityFalse().click();
         try {
@@ -102,7 +72,7 @@ public class FirstTest {
     }
 
     //Проврека выравнивания текста
-    @Test (priority = 7)
+    @Test (priority = 6)
     public void AligningTheTextOfTheVisualElement() {
         AlignLeft().click();
         Assert.assertTrue(mainButton().getAttribute("style").contains("left"), "Проверка выравнивания текста по левому краю");
@@ -151,12 +121,6 @@ public class FirstTest {
             Assert.assertFalse(true);
         }
 
-
     }
 
-    @AfterSuite
-    public static void tearDown() throws IOException {
-        Carry();
-        driver.quit();
-    }
 }

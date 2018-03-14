@@ -1,5 +1,6 @@
 Elements/ScreenShot.class
 Elements/CheckingOS.class
-qa/marm/test/FirstTest.class
+qa/marm/test/ButtonTest.class
+qa/marm/test/Authorization.class
 Elements/elementsScreens.class
 Elements/CarryFile.class
