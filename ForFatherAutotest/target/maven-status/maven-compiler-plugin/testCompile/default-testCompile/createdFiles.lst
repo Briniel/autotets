@@ -1,7 +1,7 @@
-BasicCheck/YandexTest.class
-BasicCheck/RadioTest.class
-BackgroundClasses/ElementsScreens.class
-BackgroundClasses/CarryFile.class
-BasicCheck/Authorization.class
-BackgroundClasses/saveSongs.class
-BackgroundClasses/CheckingOS.class
+BackgroundClasses\saveSongs.class
+BasicCheck\Authorization.class
+BasicCheck\YandexTest.class
+BackgroundClasses\CheckingOS.class
+BackgroundClasses\CarryFile.class
+BackgroundClasses\ElementsScreens.class
+BasicCheck\RadioTest.class

@@ -23,11 +23,11 @@ import static BasicCheck.Authorization.*;
 
 public class RadioTest {
 
-    public ArrayList<String> songNowSave;
-    public ArrayList<String> songTopSave;
+    private ArrayList<String> songNowSave;
+    private ArrayList<String> songTopSave;
 
     @Attachment(value = "Список песен", type = "text/csv")
-    public byte[] saveSvgAttachment(String name) throws IOException, URISyntaxException {
+    private byte[] saveSvgAttachment(String name) throws IOException, URISyntaxException {
         return getSampleFile("song"+name+".csv");
     }
 
@@ -48,16 +48,16 @@ public class RadioTest {
         saveSvgAttachment("Menu");
     }
 
-    @Test(priority = 2)
+    @Test(dependsOnMethods = "SearchForNewSongs", alwaysRun = true)
     public void GoToTheTop(){
-        WebDriverWait wait = (new WebDriverWait(driver, 25));
+        WebDriverWait wait = (new WebDriverWait(driver, 15));
         driver.findElement(By.className("menuButton")).click();
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class=\"mainMenu\"]/div[contains(text(), 'НАШЕ Радио')]")));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("menu-item-8684")));
         driver.findElement(By.id("menu-item-8684")).click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//h1[contains(text(), 'Чартова дюжина')]")));
     }
 
-    @Test(priority = 3)
+    @Test(dependsOnMethods = "GoToTheTop")
     public void GettingTopSongs() throws IOException, URISyntaxException {
         List<WebElement> songOld = driver.findElements(By.xpath("//div[@class=\"results\"]/div[2]/div/div[@class=\"artist-song\"]"));
         CreatureFile(songOld, "Top");
@@ -65,7 +65,7 @@ public class RadioTest {
         songTopSave = Save(songOld);
     }
 
-    @Test(priority = 4)
+    @Test(dependsOnMethods = "GettingTopSongs")
     public void Comparison(){
         ArrayList<String> SaveTopSongs = SortingSongs(songTopSave, songNowSave);
         Assert.assertFalse(SaveTopSongs.size() == 0, "Нет совпадений в композиций");

@@ -23,7 +23,7 @@ public class Authorization {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public static void tearDown() throws IOException {
         Carry();
         driver.quit();

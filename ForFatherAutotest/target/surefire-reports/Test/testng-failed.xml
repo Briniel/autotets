@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Test]">
+<suite name="Failed suite [Test]" guice-stage="DEVELOPMENT" verbose="0">
   <test name="Radio(failed)">
     <classes>
-      <class name="BasicCheck.RadioTest">
-        <methods>
-          <include name="Comparison"/>
-        </methods>
-      </class> <!-- BasicCheck.RadioTest -->
       <class name="BasicCheck.Authorization">
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
       </class> <!-- BasicCheck.Authorization -->
+      <class name="BasicCheck.RadioTest">
+        <methods>
+          <include name="GoToTheTop"/>
+          <include name="GettingTopSongs"/>
+          <include name="Comparison"/>
+          <include name="SearchForNewSongs"/>
+        </methods>
+      </class> <!-- BasicCheck.RadioTest -->
     </classes>
   </test> <!-- Radio(failed) -->
+  <test name="Yandex(failed)">
+    <classes>
+      <class name="BasicCheck.Authorization">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- BasicCheck.Authorization -->
+      <class name="BasicCheck.YandexTest">
+        <methods>
+          <include name="ErrorYandex"/>
+          <include name="Login"/>
+        </methods>
+      </class> <!-- BasicCheck.YandexTest -->
+    </classes>
+  </test> <!-- Yandex(failed) -->
 </suite> <!-- Failed suite [Test] -->
