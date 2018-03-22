@@ -1,39 +1,31 @@
 package BasicCheck;
 
 
-import org.openqa.selenium.chrome.ChromeDriver;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
-import static BackgroundClasses.CheckingOS.CheckingMyOS;
 import static BackgroundClasses.ElementsScreens.*;
+import static BasicCheck.Authorization.driver;
 
 public class YandexTest {
 
-    @BeforeClass
-    public static void setup(){
-        System.setProperty("webdriver.chrome.driver", CheckingMyOS());
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get("https://yandex.ru/");
+    @Attachment(value = "Page screenshot", type = "image/png")
+    protected byte[] saveScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
-
-    @Test
+    @Test(priority = 5)
     public void Login(){
+        driver.get("https://yandex.ru/");
+        saveScreenshot();
         Search().sendKeys("Selenium");
         ButtonSearch().click();
         int resul = ResultSearch().getSize().height;
-        if (resul == 0){
-            System.out.print("По запросу ничего не найдено");
-            Assert.assertFalse(true);
-        } else {
-            System.out.println("По запросу найдено "+ResultSearch().getSize().height);
-        }
+        saveScreenshot();
+        Assert.assertFalse(resul == 0, "По запросу ничего не найдено");
     }
 
 

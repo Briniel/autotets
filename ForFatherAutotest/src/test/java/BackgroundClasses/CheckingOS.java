@@ -1,22 +1,30 @@
 package BackgroundClasses;
 
-import java.util.Locale;
+import java.util.*;
+
 
 public class CheckingOS {
 
-
-    public static String CheckingMyOS(){
-        String OS = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
-        String drive = null;
-        if(OS.indexOf("win") >= 0){
-            String place = System.getProperty("user.dir");
-            drive = place.replace("ForFatherAutotest","chromedriver.exe");
-        } else if (OS.contains("nix") || OS.contains("nux")
-                || OS.contains("aix")){
-            String place = System.getProperty("user.dir");
-            drive = place.replace("ForFatherAutotest","chromedriver");
+    static String CheckingMyOS(){
+        String CheckOS = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
+        String OS = null;
+        if(CheckOS.contains("win")){
+            OS = "src\\test\\resources\\";
+        } else if (CheckOS.contains("nix") || CheckOS.contains("nux")
+                || CheckOS.contains("aix")){
+            OS = "src/test/resources/";
         }
-        return drive;
+        return OS;
     }
 
+    public static String GiveDriver(){
+        String driverChrome;
+        String MyOS = CheckingMyOS();
+        if (MyOS.contains("\\")){
+            driverChrome = MyOS+"chromedriver.exe";
+        } else {
+            driverChrome = MyOS+"chromedriver";
+        }
+        return driverChrome;
+    }
 }

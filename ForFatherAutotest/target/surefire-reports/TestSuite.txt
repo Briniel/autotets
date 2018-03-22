@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.501 sec
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 70.167 s <<< FAILURE! - in TestSuite
+Comparison(BasicCheck.RadioTest)  Time elapsed: 0.012 s  <<< FAILURE!
+java.lang.AssertionError: Нет совпадений в композиций expected [false] but found [true]
+	at BasicCheck.RadioTest.Comparison(RadioTest.java:71)
+
