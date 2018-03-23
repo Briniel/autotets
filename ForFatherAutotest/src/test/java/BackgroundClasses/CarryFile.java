@@ -37,7 +37,7 @@ public class CarryFile {
     }
 
     public static void CreatureFile(List<WebElement> saveSong, String name) throws IOException {
-        FileWriter fr = new FileWriter("src\\test\\resources\\song"+name+".csv");
+        FileWriter fr = new FileWriter("src/test/resources/song"+name+".csv");
         fr.write("\""+"Всего песен: "+saveSong.size()+"\""+'\n');
         for (int i = 0; i < saveSong.size(); i++){
             fr.write("\""+saveSong.get(i).getText()+"\""+'\n');

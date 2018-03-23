@@ -1,7 +1,7 @@
 package BasicCheck;
 
 
-import io.qameta.allure.Attachment;
+import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -12,6 +12,8 @@ import org.testng.asserts.SoftAssert;
 import static BackgroundClasses.ElementsScreens.*;
 import static BasicCheck.Authorization.driver;
 
+
+@Feature("Test Yandex")
 public class YandexTest {
 
     @Attachment(value = "Page screenshot", type = "image/png")
@@ -31,11 +33,14 @@ public class YandexTest {
     }
 
     @Test(dependsOnMethods = "Login")
+    @Description("In this test there should be an error")
+    @Story("Error test")
+    @Severity(SeverityLevel.TRIVIAL)
     public void ErrorYandex(){
         SoftAssert s = new SoftAssert();
-        s.assertTrue(driver.findElements(By.xpath("//div[contains(text(), 'НАШЕ')]]")).size() == 1, "Элемент не найден");
+        s.assertFalse(driver.findElements(By.xpath("//a[text()='Login']")).size() == 0, "Элемент не найден");
         int resul = ResultSearch().getSize().height;
-        s.assertFalse(resul == 0, "По запросу ничего не найдено");
+        s.assertFalse(resul != 0, "По запросу ничего не найдено");
         s.assertAll();
     }
 

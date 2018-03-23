@@ -1,12 +1,12 @@
 [
   {
-    "name": "WEB element not found",
-    "messageRegex": ".*Unable to locate element.*",
+    "name": "Ошибка в тесте сайта Яндекс",
+    "messageRegex": ".*Элемент не найден.*",
     "matchedStatuses": ["broken"]
   },
   {
-    "name": "Unknown Error",
-    "traceRegex": ".*NullPointer.*",
+    "name": "Ошибка в тесте сайта Яндекс",
+    "messageRegex": ".*По запросу ничего не найдено.*",
     "matchedStatuses": ["broken"]
   },
   {

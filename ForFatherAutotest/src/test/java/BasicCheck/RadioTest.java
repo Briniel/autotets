@@ -1,6 +1,6 @@
 package BasicCheck;
 
-import io.qameta.allure.Attachment;
+import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,6 +21,8 @@ import static BackgroundClasses.saveSongs.Save;
 import static BackgroundClasses.saveSongs.SortingSongs;
 import static BasicCheck.Authorization.*;
 
+
+@Feature("Test Radio")
 public class RadioTest {
 
     private ArrayList<String> songNowSave;
@@ -37,6 +39,7 @@ public class RadioTest {
     }
 
     @Test(priority = 1)
+    @Severity(SeverityLevel.CRITICAL)
     public void SearchForNewSongs() throws IOException, URISyntaxException {
         WebDriverWait wait = (new WebDriverWait(driver, 20));
         driver.get("http://www.nashe.ru/");
@@ -58,6 +61,7 @@ public class RadioTest {
     }
 
     @Test(dependsOnMethods = "GoToTheTop")
+    @Description("Some detailed test description")
     public void GettingTopSongs() throws IOException, URISyntaxException {
         List<WebElement> songOld = driver.findElements(By.xpath("//div[@class=\"results\"]/div[2]/div/div[@class=\"artist-song\"]"));
         CreatureFile(songOld, "Top");
@@ -66,8 +70,11 @@ public class RadioTest {
     }
 
     @Test(dependsOnMethods = "GettingTopSongs")
+    @Description("In this test there should be an error")
+    @Story("Error test")
+    @Severity(SeverityLevel.MINOR)
     public void Comparison(){
         ArrayList<String> SaveTopSongs = SortingSongs(songTopSave, songNowSave);
-        Assert.assertFalse(SaveTopSongs.size() == 0, "Нет совпадений в композиций");
+        Assert.assertFalse(SaveTopSongs.size() == 0, "Нет совпадений в композициях");
     }
 }

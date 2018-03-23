@@ -1,26 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 1, Time elapsed: 14.103 s <<< FAILURE! - in TestSuite
-GettingTopSongs(BasicCheck.RadioTest)  Time elapsed: 0.212 s  <<< FAILURE!
-java.lang.NullPointerException
-	at BasicCheck.RadioTest.getSampleFile(RadioTest.java:36)
-	at BasicCheck.RadioTest.saveSvgAttachment(RadioTest.java:31)
-	at BasicCheck.RadioTest.GettingTopSongs(RadioTest.java:64)
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 41.183 s <<< FAILURE! - in TestSuite
+Comparison(BasicCheck.RadioTest)  Time elapsed: 0.017 s  <<< FAILURE!
+java.lang.AssertionError: Нет совпадений в композиций expected [false] but found [true]
+	at BasicCheck.RadioTest.Comparison(RadioTest.java:78)
 
-ErrorYandex(BasicCheck.YandexTest)  Time elapsed: 0.036 s  <<< FAILURE!
-org.openqa.selenium.InvalidSelectorException: 
-invalid selector: Unable to locate an element with the xpath expression //div[contains(text(), 'НАШЕ')]] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//div[contains(text(), 'НАШЕ')]]' is not a valid XPath expression.
-  (Session info: chrome=64.0.3282.186)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
-Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
-System info: host: 'BRINIEL-ПК', ip: '192.168.1.175', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '9.0.4'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\Users\Briniel\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 64.0.3282.186, webStorageEnabled: true}
-Session ID: a4560ffe28288c9ea8bec979123b07a5
-*** Element info: {Using=xpath, value=//div[contains(text(), 'НАШЕ')]]}
-	at BasicCheck.YandexTest.ErrorYandex(YandexTest.java:36)
+ErrorYandex(BasicCheck.YandexTest)  Time elapsed: 30.083 s  <<< FAILURE!
+java.lang.AssertionError: 
+The following asserts failed:
+	Элемент не найден expected [false] but found [true],
+	По запросу ничего не найдено expected [false] but found [true]
+	at BasicCheck.YandexTest.ErrorYandex(YandexTest.java:44)
 
