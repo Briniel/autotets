@@ -6,9 +6,9 @@
             <class name="qa.marm.test.Authorization"/>
         </classes>
     </test>
-    <test name="Button">
+    <test name="View">
         <classes>
-            <class name="qa.marm.test.ButtonTest"/>
+            <class name="qa.marm.test.View"/>
         </classes>
     </test>
 </suite>

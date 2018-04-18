@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Poligon]">
+  <test name="View(failed)">
+    <classes>
+      <class name="qa.marm.test.Authorization">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- qa.marm.test.Authorization -->
+      <class name="qa.marm.test.View">
+        <methods>
+          <include name="CheckView"/>
+          <include name="MenuLeft"/>
+        </methods>
+      </class> <!-- qa.marm.test.View -->
+    </classes>
+  </test> <!-- View(failed) -->
+</suite> <!-- Failed suite [Poligon] -->
